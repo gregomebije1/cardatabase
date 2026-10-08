@@ -3,6 +3,7 @@ package com.gregomebije.cardatabase.repository;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.gregomebije.cardatabase.model.Car;
 
@@ -27,8 +28,8 @@ public interface CarRepository extends CrudRepository<Car, Long> {
     List<Car> findByBrandOrderByModelYearAsc(String brand);
 
     // Fetch cars by brand using SQL
-    @Query("select c from Car c where c.brand = ?1")
-    List<Car> findByBrand(String brand);
+    //@Query("select c from Car c where c.brand = ?1")
+    //List<Car> findByBrand(String brand);
 
      // Fetch cars by brand using SQL
     @Query("select c from Car c where c.brand like %?1")
